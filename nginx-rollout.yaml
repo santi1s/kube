@@ -18,6 +18,7 @@ spec:
         image: nginx:latest
         ports:
         - containerPort: 80
+          protocol: TCP
         resources:
           requests:
             cpu: "0.5"
