@@ -26,5 +26,6 @@ spec:
           limits:
             cpu: "500m"
             memory: "256Mi"
+  revisionHistoryLimit: 2  # Keep only 2 old ReplicaSets
   strategy:
     canary: {}
