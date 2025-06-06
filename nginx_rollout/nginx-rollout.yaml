@@ -24,11 +24,11 @@ spec:
           protocol: TCP
         resources:
           requests:
-            cpu: "28m"
+            cpu: "25m"
             memory: "70Mi"
           limits:
             cpu: "500m"
             memory: "256Mi"
-  revisionHistoryLimit: 2  # Keep only 2 old ReplicaSets
+  revisionHistoryLimit: 2
   strategy:
     canary: {}
