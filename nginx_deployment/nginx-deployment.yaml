@@ -5,6 +5,8 @@ metadata:
   namespace: kube-test
   labels:
     app: nginx-deployment
+  annotations:
+    argocd.argoproj.io/compare-options: IgnoreExtraneous  # Move here
 spec:
   replicas: 1
   selector:
@@ -14,8 +16,6 @@ spec:
     metadata:
       labels:
         app: nginx-deployment
-      annotations:
-        argocd.argoproj.io/compare-options: IgnoreExtraneous
     spec:
       containers:
       - name: nginx
