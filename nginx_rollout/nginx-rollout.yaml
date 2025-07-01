@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: nginx:latest
+        image: nginx:1.25
         imagePullPolicy: Always
         ports:
         - containerPort: 80
