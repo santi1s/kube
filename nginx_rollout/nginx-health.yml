@@ -21,12 +21,12 @@ spec:
     interval: 30s
     count: 3
     successCondition: result[0] >= 0
-    failureLimit: 2
+    # failureLimit: 2
     provider:
       prometheus:
         address: http://prometheus.monitoring.svc.cluster.local:9090
         query: |
-          rate(nginx_connections_accepted[1m])
+          ratex(nginx_connections_accepted[1m])
   - name: request-rate
     interval: 30s
     count: 3
