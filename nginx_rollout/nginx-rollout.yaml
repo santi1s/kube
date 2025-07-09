@@ -79,23 +79,23 @@ spec:
       stableMetadata:
         labels:
           argo_rollout_role: stable
-      # analysis:
-      #   templates:
-      #   - templateName: nginx-analysis
-      #   startingStep: 2
-      #   args:
-      #   - name: service-name
-      #     value: nginx-rollout
+      analysis:
+        templates:
+        - templateName: nginx-analysis
+        startingStep: 2
+        args:
+        - name: service-name
+          value: nginx-rollout
       steps:
       - setWeight: 10
       - pause:
           duration: 360s
-      # - analysis:
-      #     templates:
-      #     - templateName: nginx-analysis
-      #     args:
-      #     - name: service-name
-      #       value: nginx-rollout
+      - analysis:
+          templates:
+          - templateName: nginx-analysis
+          args:
+          - name: service-name
+            value: nginx-rollout
       - setWeight: 100
       - pause:
           duration: 60s
