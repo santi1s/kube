@@ -6,7 +6,7 @@ metadata:
   labels:
     app: nginx
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: nginx
@@ -31,4 +31,17 @@ spec:
             memory: "256Mi"
   revisionHistoryLimit: 2
   strategy:
-    canary: {}
+    canary:
+      canaryMetadata:
+        labels:
+          argo_rollout_role: canary
+      maxSurge: 50%
+      maxUnavailable: 20%
+      stableMetadata:
+        labels:
+          argo_rollout_role: stable
+      steps:
+      - setWeight: 10
+      - pause:
+          duration: 360s
+      - setWeight: 100
