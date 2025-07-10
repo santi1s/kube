@@ -26,7 +26,7 @@ spec:
       prometheus:
         address: http://prometheus.monitoring.svc.cluster.local:9090
         query: |
-          ratex(nginx_connections_accepted[1m])
+          rate(nginx_connections_accepted[1m])
   - name: request-rate
     interval: 30s
     count: 3
