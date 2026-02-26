@@ -65,11 +65,11 @@ spec:
           protocol: TCP
         resources:
           requests:
-            cpu: "40m"
-            memory: "50Mi"
+            cpu: 100m        # Change from 40m
+            memory: 100Mi    # Change from 50Mi
           limits:
-            cpu: "500m"
-            memory: "256Mi"
+            cpu: 1000m       # Change from 500m
+            memory: 512Mi    # Change from 256Mi
         volumeMounts:
         - name: nginx-config
           mountPath: /etc/nginx/conf.d
